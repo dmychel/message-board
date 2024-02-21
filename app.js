@@ -2,6 +2,7 @@ const express = require("express");
 
 // app
 const app = express();
+app.use(express.static(__dirname + "/public"));
 
 // engine
 app.set("view engine", "ejs");
