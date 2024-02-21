@@ -10,7 +10,7 @@ body {
   margin-left: 5%;
   margin-right: 5%;
   background-color: black;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 header {
@@ -26,9 +26,9 @@ header h1 {
 main {
   display: flex;
   justify-content: center;
-  align-items: center;
+
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   padding: 8px;
 }
 
@@ -37,6 +37,7 @@ main {
   align-items: center;
   flex-direction: column;
   width: 100%;
+  height: fit-content;
   border: 1px solid white;
 }
 
@@ -53,6 +54,7 @@ main {
 .post-parent {
   display: flex;
   flex-direction: column;
+  max-height: 50%;
   width: 100%;
   gap: 0.75rem;
   overflow-y: scroll;
@@ -96,15 +98,27 @@ main {
   color: white;
 }
 
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  background: linear-gradient(#667ea5, #78b0f2);
+  width: 100%;
+}
+
+footer span {
+  padding: 15px;
+}
 /* link styling */
 a {
   color: blue;
+}
 
-  &:hover {
-    color: rgb(116, 116, 239);
-  }
+a:hover {
+  color: white;
+}
 
-  &:visited {
-    color: blue;
-  }
+a:visited {
+  color: blue;
 }
