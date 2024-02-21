@@ -16,28 +16,32 @@
       </nav>
     </header>
     <main>
-      <section class="fourm">
-        <% if(messages.length > 0) { %> <% messages.forEach(message => { %>
-        <div class="post">
-          <div class="profile">
-            <div class="name">
-              <h3><%= message.user %></h3>
-            </div>
-          </div>
-
-          <div class="user-info"></div>
-
-          <div class="message">
-            <div class="message-info"><%= message.date %></div>
-            <div class="message">
-              <p><%= message.message %></p>
-            </div>
-          </div>
+      <section class="forum">
+        <div class="forum-header">
+          <h2>Welcome to the chat!</h2>
         </div>
+        <div class="post-parent">
+          <% if(messages.length > 0) { %> <% messages.forEach(message => { %>
+          <div class="post">
+            <div class="profile">
+              <div class="name">
+                <h3><%= message.user %></h3>
+              </div>
+            </div>
 
-        <% }) %> <% } else { %>
-        <p>No posts to display</p>
-        <%}%>
+            <div class="user-info"></div>
+
+            <div class="message-container">
+              <div class="message-info"><%= message.date %></div>
+              <div class="message">
+                <p>><%= message.message %></p>
+              </div>
+            </div>
+          </div>
+          <% }) %> <% } else { %>
+          <p>No posts to display</p>
+          <%}%>
+        </div>
       </section>
     </main>
   </body>
