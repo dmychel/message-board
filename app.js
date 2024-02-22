@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const Post = require("./models/messages");
+const Post = require("./models/posts");
 
 // app
 const app = express();
@@ -19,31 +19,16 @@ mongoose
 // engine
 app.set("view engine", "ejs");
 
+// routes
 app.get("/", (req, res) => {
-  const post = new Post({
-    user: "Admin",
-    body: "Hello is this thing working -from mongodb",
-  });
-  post.save().then((result) => {
-    res.send(result).catch((err) => console.log(err));
-  });
+  Post.find()
+    .then((result) => {
+      res.render("index", { posts: result });
+    })
+    .catch((err) => console.log(err));
 });
 
-app.get("/", (req, res) => {
-  const messages = [
-    {
-      user: "Admin",
-      message: "Hello.. Is this thing working?",
-      date: new Date(),
-    },
-    {
-      user: "Generic User",
-      message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
-      date: new Date(),
-    },
-  ];
-  res.render("index", { messages });
-});
+//
 
 app.use((req, res) => {
   res.status(404).render("404");
