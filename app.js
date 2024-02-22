@@ -1,14 +1,22 @@
 const express = require("express");
+const mongoose = require("mongoose");
 
 // app
 const app = express();
+
+// mongodb connectivity
+const dbURI =
+  "mongodb+srv://admin:Livelife123@message-board.9yyxmzd.mongodb.net/?retryWrites=true&w=majority";
+mongoose
+  .connect(dbURI)
+  .then((result) => app.listen(3000), console.log("connected to db"))
+  .catch((err) => console.log(err));
+
+// css
 app.use(express.static(__dirname + "/public"));
 
 // engine
 app.set("view engine", "ejs");
-
-// requests
-app.listen(3000);
 
 app.get("/", (req, res) => {
   const messages = [
