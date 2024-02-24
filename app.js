@@ -21,6 +21,8 @@ mongoose
 app.set("view engine", "ejs");
 
 // routes
+
+// send new post to database
 app.post('/', (req, res) => {
   console.log(req.body)
   const newPost = new Post(req.body)
@@ -30,7 +32,7 @@ app.post('/', (req, res) => {
     .catch((err) => console.log(err))
 })
 
-
+// display data from database
 app.get("/", (req, res) => {
   Post.find()
     .then((result) => {
@@ -39,6 +41,13 @@ app.get("/", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+
+app.get("/feedback", (req, res) => {
+  res.render('feedback');
+})
+
+
+// 404
 app.use((req, res) => {
   res.status(404).render("404");
 });
