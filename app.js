@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const Post = require('./models/posts')
+const Post = require('./models/posts_model');
+const Feedback = require('./models/feedback_model')
 
 // app
 const app = express();
@@ -32,6 +33,12 @@ app.post('/', (req, res) => {
     .catch((err) => console.log(err))
 })
 
+// send feedback to database
+app.post('/feedback-form', (req, res) => {
+  console.log(req.body)
+  // const newFeedback = new Feedback(req.body)
+})
+
 // display data from database
 app.get("/", (req, res) => {
   Post.find()
@@ -42,8 +49,8 @@ app.get("/", (req, res) => {
 });
 
 
-app.get("/feedback", (req, res) => {
-  res.render('feedback');
+app.get("/feedback-form", (req, res) => {
+  res.render('feedback-form');
 })
 
 
