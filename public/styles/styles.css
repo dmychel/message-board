@@ -1,151 +1,87 @@
 * {
-  padding: 0;
   margin: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: 5%;
-  margin-right: 5%;
-  background-color: black;
-  overflow-x: hidden;
+  padding: 0;
 }
 
 header {
-  background: linear-gradient(black, rgb(88, 88, 88));
-  border: 1px solid white;
-  width: 100%;
-}
-
-header h1 {
-  padding: 15px;
+  padding: 8px;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 80vh;
+  height: 90vh;
   padding: 8px;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
-.forum-header {
-  display: flex;
-  width: 100%;
-  background: linear-gradient(#667ea5, #78b0f2);
-}
-
-.forum-header h2 {
-  padding: 8px;
-}
-
-.forum {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  border: 1px solid white;
-}
-
-.post-parent {
+.posts-parent {
   display: flex;
   flex-direction: column;
-  min-height: 50%;
-  border: 2px solid purple;
+  align-items: center;
+  height: 80%;
+  gap: 0.5em;
   width: 100%;
-  gap: 0.75rem;
+  padding: 8px;
   overflow-y: scroll;
+  border: 2px solid;
 }
 
 .post {
-  background-color: #eef2f7;
-  width: 100%;
   display: flex;
+  width: 100%;
+  height: fit-content;
 }
 
 .profile {
-  background-color: #e4eaf2;
-  border-right: 1px solid black;
-  width: 30%;
-  padding: 8px;
-}
-
-.message-info {
-  background-color: #e4eaf2;
-  border-bottom: 1px solid black;
+  width: 15%;
+  border: 1px solid;
   padding: 8px;
 }
 
 .message-container {
   width: 100%;
-}
-
-.message {
+  border: 1px solid;
   padding: 8px;
 }
 
-.error {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  gap: 1em;
-  color: white;
-}
-
-.form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid yellow;
-  height: 10%;
+.form-container {
+  border: 2px solid;
   width: 100%;
+  padding: 8px;
 }
 
 form {
   display: flex;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
-  border: 2px solid purple;
-}
-
-form input {
-  padding: 8px;
-}
-
-.submit {
-  width: fit-content;
-  height: fit-content;
-  padding: 5px;
+  border: 1px solid;
 }
 
 .username {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  border: 2px solid white;
-  height: 100%;
-  padding: 0;
+  width: 15%;
+  border: 1px solid;
+  padding: 8px;
 }
 
 .post-body-div {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  border: 2px solid white;
-  height: 100%;
+  border: 1px solid;
   width: 100%;
+}
+
+.submit {
+  width: fit-content;
 }
 
 .post-body {
   width: 90%;
+  padding: 8px;
 }
 
 footer {
