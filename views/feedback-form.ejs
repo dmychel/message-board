@@ -6,11 +6,11 @@
     <%- include('./partials/header') %>
 
       <section class="feedback">
-        <form action="/" method="POST">
+        <form action="/feedback-form" method="POST">
           <label>Your feedback is most welcome</label>
           <input type="text" placeholder="name (optional)" name="name" />
-          <input type="email" name="email" placeholder="youremail@mail.com (optional)">
-          <textarea name="feedback" cols="30" rows="10" placeholder='feedback here' required></textarea
+          <input type="text" name="email" placeholder="youremail@mail.com (optional)">
+          <textarea name="feedback" cols="30" rows="10" placeholder='feedback here' required></textarea>
           <input type="submit" class="submit" value="submit" />
         </form>
       </section>
@@ -18,4 +18,4 @@
       <%- include('./partials/footer') %>
   </body>
 
-</html>
+</html>z
