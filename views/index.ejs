@@ -6,49 +6,32 @@
     <%- include('./partials/header.ejs') %>
 
     <main>
-      <section class="forum">
+      <section class="posts-parent">
         <div class="forum-header">
           <h2>Welcome to the chat!</h2>
         </div>
-        <div class="post-parent">
-          <% if(posts.length > 0) { %> <% posts.forEach(post => { %>
-          <div class="post">
-            <div class="profile">
-              <div class="name">
-                <h3><%= post.user %></h3>
-              </div>
-            </div>
-
-            <div class="user-info"></div>
-
-            <div class="message-container">
-              <div class="message-info"><%= post.date %></div>
-              <div class="message">
-                <p>><%= post.body %></p>
-              </div>
+        <% if(posts.length > 0) { %> <% posts.forEach(post => { %>
+        <div class="post">
+          <div class="profile">
+            <div class="name">
+              <h3><%= post.user %></h3>
             </div>
           </div>
-          <% }) %> <% } else { %>
-          <p>No posts to display</p>
-          <%}%>
+
+          <div class="user-info"></div>
+
+          <div class="message-container">
+            <div class="message-info"><%= post.date %></div>
+            <div class="message">
+              <p>><%= post.body %></p>
+            </div>
+          </div>
         </div>
+        <% }) %> <% } else { %>
+        <p>No posts to display</p>
+        <%}%>
       </section>
-      <section class="form">
-        <form>
-          <div class="username profile">
-            <input type="text" placeholder="name" required />
-          </div>
-          <div class="post-body-div post">
-            <input
-              type="text"
-              placeholder="post here"
-              class="post-body"
-              required
-            />
-            <input type="submit" class="submit" value="submit" />
-          </div>
-        </form>
-      </section>
+      <%- include('./partials/postForm.ejs') %>
     </main>
 
     <%- include('./partials/footer.ejs') %>
