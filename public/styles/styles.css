@@ -89,6 +89,33 @@ form input {
   padding: 8px;
 }
 
+.feedback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  border: 2px solid black;
+}
+
+.feedback form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  height: 50%;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.feedback form input {
+  width: 50%;
+  padding: 8px;
+}
+
+.feedback textarea {
+  width: 50%;
+  padding: 8px;
+}
+
 footer {
   display: flex;
   justify-content: space-around;
