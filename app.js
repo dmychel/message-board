@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const Post = require("./models/posts");
+const Post = require('./models/posts')
 
 // app
 const app = express();
@@ -21,10 +21,15 @@ mongoose
 app.set("view engine", "ejs");
 
 // routes
+app.post('/', (req, res) => {
+  console.log(req.body)
+  const newPost = new Post(req.body)
 
-app.post("/add-post", (req, res) => {
-  const post = new Post(req.body);
-});
+  newPost.save()
+    .then((result) => res.redirect('back'))
+    .catch((err) => console.log(err))
+})
+
 
 app.get("/", (req, res) => {
   Post.find()
