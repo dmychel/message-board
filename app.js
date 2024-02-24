@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const Post = require('./models/posts_model');
 const Feedback = require('./models/feedback_model')
+const port = process.env.PORT || 3000;
 
 // app
 const app = express();
@@ -15,7 +16,7 @@ const dbURI =
   "mongodb+srv://admin:Livelife123@message-board.9yyxmzd.mongodb.net/forum?retryWrites=true&w=majority";
 mongoose
   .connect(dbURI)
-  .then((result) => app.listen(3000, 'localhost'), console.log("connected to db"))
+  .then((result) => app.listen(port, 'localhost'), console.log("connected to db"))
   .catch((err) => console.log(err));
 
 // engine
