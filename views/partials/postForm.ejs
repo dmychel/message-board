@@ -1,11 +1,9 @@
 <section class="form-container">
   <form action="/" method="POST">
-    <div class="username">
+    <div class="text">
       <input type="text" placeholder="name" name="user" />
+      <textarea placeholder="post here" name="body" class="post-body" required cols="30" rows="3"></textarea>
     </div>
-    <div class="post-body-div">
-      <input type="text" placeholder="post here" name="body" class="post-body" required />
-      <input type="submit" class="submit" value="submit" />
-    </div>
+    <button type="submit"><img src="/imgs/send.png" alt="Send"></button>
   </form>
 </section>
