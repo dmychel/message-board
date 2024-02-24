@@ -36,7 +36,12 @@ app.post('/', (req, res) => {
 // send feedback to database
 app.post('/feedback-form', (req, res) => {
   console.log(req.body)
-  // const newFeedback = new Feedback(req.body)
+  const newFeedback = new Feedback(req.body)
+  newFeedback.save()
+    .then((result) => { res.redirect('/') })
+    .catch((err) => {
+      console.log(err)
+    })
 })
 
 // display data from database
