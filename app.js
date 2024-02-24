@@ -14,7 +14,7 @@ const dbURI =
   "mongodb+srv://admin:Livelife123@message-board.9yyxmzd.mongodb.net/forum?retryWrites=true&w=majority";
 mongoose
   .connect(dbURI)
-  .then((result) => app.listen(8000), console.log("connected to db"))
+  .then((result) => app.listen(3000, 'localhost'), console.log("connected to db"))
   .catch((err) => console.log(err));
 
 // engine
