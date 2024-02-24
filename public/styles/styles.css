@@ -47,7 +47,7 @@ main {
 }
 
 .form-container {
-  border: 2px solid;
+  border: 1px solid;
   width: 100%;
   padding: 8px;
 }
@@ -57,6 +57,10 @@ form {
   justify-content: center;
   align-items: center;
   border: 1px solid;
+}
+
+form input {
+  max-width: 100%;
 }
 
 .username {
@@ -71,6 +75,7 @@ form {
 .post-body-div {
   display: flex;
   align-items: center;
+  gap: 2em;
   border: 1px solid;
   width: 100%;
 }
@@ -80,7 +85,7 @@ form {
 }
 
 .post-body {
-  width: 90%;
+  width: 80%;
   padding: 8px;
 }
 
@@ -96,6 +101,7 @@ footer {
 footer span {
   padding: 15px;
 }
+
 /* link styling */
 a {
   color: blue;
