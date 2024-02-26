@@ -164,3 +164,14 @@ a:hover {
 a:visited {
   color: #4ffa7a;
 }
+
+@media screen and (max-width: 652px) {
+  .posts-parent {
+    width: 80%;
+    height: 70%;
+  }
+
+  .form-container {
+    width: 80%;
+  }
+}
